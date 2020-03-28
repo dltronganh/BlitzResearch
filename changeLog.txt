@@ -1,0 +1,20 @@
+1) makefile
+	link files to math library
+	add flag -lm to line 103, 109
+
+2) printAst.cc:1215:18: error: cast from ‘AstNode*’ to ‘int’ loses precision [-fpermissive]
+   int p1 = (int) p;
+
+-> solve change int to __intptr_t
+ (It's an int type guaranteed to be big enough to contain a pointer.
+
+3) file mapping.cc line 196
+
+-> (int) k to (__intptr_t) k
+
+4)makefile line 127, change into 1 line. Some error happen with "\" character to enter a new line
+
+5)include<iostream> in main.cc
+
+#Edit by Dang Le Trong Anh
+#Email dltronganh@gmail.com
